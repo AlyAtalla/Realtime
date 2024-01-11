@@ -7,7 +7,6 @@ class SearchController < ApplicationController
 
       @recent_searches = Search.recent_searches
     else
-    
       flash.now[:alert] = 'Please enter a search query.'
     end
   end
