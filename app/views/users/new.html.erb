@@ -1,0 +1,27 @@
+<!-- app/views/users/new.html.erb -->
+<div class="max-w-md mx-auto my-10">
+  <h2 class="text-2xl font-semibold mb-6">Sign up</h2>
+  <%= form_for(@user, html: { class: "space-y-4" }) do |f| %>
+    <div>
+      <%= f.label :username, class: "block text-sm font-medium text-gray-600" %>
+      <%= f.text_field :username, class: "mt-1 p-2 w-full border rounded-md" %>
+    </div>
+
+    <div>
+      <%= f.label :email, class: "block text-sm font-medium text-gray-600" %>
+      <%= f.email_field :email, class: "mt-1 p-2 w-full border rounded-md" %>
+    </div>
+
+    <div>
+      <%= f.label :password, class: "block text-sm font-medium text-gray-600" %>
+      <%= f.password_field :password, class: "mt-1 p-2 w-full border rounded-md" %>
+    </div>
+
+    <div>
+      <%= f.label :password_confirmation, class: "block text-sm font-medium text-gray-600" %>
+      <%= f.password_field :password_confirmation, class: "mt-1 p-2 w-full border rounded-md" %>
+    </div>
+
+    <%= f.submit "Sign up", class: "w-full p-2 bg-green-500 text-white rounded-md" %>
+  <% end %>
+</div>
