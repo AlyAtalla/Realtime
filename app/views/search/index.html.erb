@@ -1,4 +1,8 @@
-<%= form_tag(search_index_path, method: :get, data: { controller: 'search' }) do %>
-  <%= text_field_tag :query, params[:query], placeholder: 'Search...' %>
-  <%= submit_tag 'Search' %>
-<% end %>
+<div class="max-w-md mx-auto my-10">
+  <%= form_tag(search_index_path, method: :get, data: { controller: 'search' }) do %>
+    <div class="flex items-center border-b border-b-2 py-2">
+      <%= text_field_tag :query, params[:query], placeholder: 'Search...', class: 'appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none' %>
+      <%= submit_tag 'Search', class: 'flex-shrink-0 bg-blue-500 text-white py-2 px-4 rounded' %>
+    </div>
+  <% end %>
+</div>
