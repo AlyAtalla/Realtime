@@ -7,15 +7,15 @@ RSpec.describe Search, type: :model do
 
   describe 'record_search' do
     it 'creates a new search record' do
-      expect {
+      expect do
         Search.record_search('test query', '127.0.0.1')
-      }.to change(Search, :count).by(1)
+      end.to change(Search, :count).by(1)
     end
 
     it 'does not create a new search record for blank query' do
-      expect {
+      expect do
         Search.record_search('', '127.0.0.1')
-      }.not_to change(Search, :count)
+      end.not_to change(Search, :count)
     end
   end
 end
