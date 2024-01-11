@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @user is already set by the before_action
+  
   end
 
   def new
