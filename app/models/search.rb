@@ -4,6 +4,6 @@ class Search < ApplicationRecord
   def self.record_search(query, user_ip)
     return if query.blank?
 
-    create(query: query, user_ip: user_ip)
+    create(query:, user_ip:)
   end
 end

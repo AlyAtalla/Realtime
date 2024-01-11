@@ -3,7 +3,6 @@ class SearchController < ApplicationController
     @search_query = params[:query]
 
     if @search_query.present?
-    
       Search.record_search(@search_query, request.remote_ip)
 
       @recent_searches = Search.recent_searches
