@@ -1,9 +1,15 @@
 class SearchController < ApplicationController
   def index
-    @search_results = if params[:query].present?
-                        Article.where('title LIKE ?', "%#{params[:query]}%")
-                      else
-                        Article.all
-                      end
+    @search_query = params[:query]
+
+    if @search_query.present?
+    
+      Search.record_search(@search_query, request.remote_ip)
+
+      @recent_searches = Search.recent_searches
+    else
+    
+      flash.now[:alert] = 'Please enter a search query.'
+    end
   end
 end
