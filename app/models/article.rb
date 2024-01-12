@@ -1,3 +1,3 @@
 class Article < ApplicationRecord
-  belongs_to :user
+ searchkick text_middle: %i[title, content]
 end
