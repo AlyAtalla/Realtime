@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :articles
-  get 'search/index'
-  root 'search#index'
+
+  resources :articles, only: [:index, :show]
+  root 'articles#index'
+  post 'search', to: 'search#index', as: 'search'
+  post 'search/suggestions', to: 'search#suggestions', as: 'search_suggestions'
 end
